@@ -2,7 +2,7 @@
  * @Author: yhy
  * @Date: 2022-06-05 11:10:02
  * @LastEditors: yhy
- * @LastEditTime: 2022-06-05 14:47:25
+ * @LastEditTime: 2022-06-05 18:35:43
  * @Description:
  */
 import { defineConfig } from "vite";
@@ -31,6 +31,14 @@ export default defineConfig({
   resolve: {
     alias: {
       "@": join(__dirname, "./src"),
+    },
+  },
+  css: {
+    // 配置less全局变量
+    preprocessorOptions: {
+      less: {
+        additionalData: `@import '@/styles/index.less';`,
+      },
     },
   },
 });
