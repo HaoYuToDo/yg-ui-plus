@@ -473,3 +473,34 @@ vue@^3.2.25:
     "@vue/runtime-dom" "3.2.36"
     "@vue/server-renderer" "3.2.36"
     "@vue/shared" "3.2.36"
+
+yg-ui-plus@^0.0.1:
+  version "0.0.1"
+  resolved "https://registry.yarnpkg.com/yg-ui-plus/-/yg-ui-plus-0.0.1.tgz#ba264dfef2039807bb9a56e95c22fb6c7baba27b"
+  integrity sha512-p93QsvZ/lmpYIxL8gMEmmLHp0G5ifZF97Sd5Ziud+0EkyAPnNF08x90NZ/8NV2ltY3+7YrkBMMYIOYg/1WJzCA==
+  dependencies:
+    vue "^3.2.25"
+
+yg-ui-plus@^0.0.2:
+  version "0.0.2"
+  resolved "https://registry.yarnpkg.com/yg-ui-plus/-/yg-ui-plus-0.0.2.tgz#00e4f0469b4c18bf858fe58a1e3611284d8955c8"
+  integrity sha512-vkBNy1NmrFOeay5LqIfOmG6zN9XDOvFahCkovZbwDWt90DozZTbKd/brlDCK293n/zQbp8f93RiwxFmKIB4k6Q==
+  dependencies:
+    vue "^3.2.25"
+    yg-ui-plus "^0.0.1"
+
+yg-ui-plus@^0.0.3:
+  version "0.0.3"
+  resolved "https://registry.yarnpkg.com/yg-ui-plus/-/yg-ui-plus-0.0.3.tgz#8f2e2b9cbae027c1ede0919bc682d8bd47a29a92"
+  integrity sha512-OPz2gDJgv6z20EamVMb7UkcfTRehgLzZI1M87nCcNAR7UsqyX9+oi+Tu05XtV6/rmeNQKxey9xlSPPDN0dBfdQ==
+  dependencies:
+    vue "^3.2.25"
+    yg-ui-plus "^0.0.2"
+
+yg-ui-plus@^0.0.4:
+  version "0.0.4"
+  resolved "https://registry.yarnpkg.com/yg-ui-plus/-/yg-ui-plus-0.0.4.tgz#c241c203b814c53b52e685f45c586e0353f62c03"
+  integrity sha512-Y1bwgKztnUCeU5satewjUjA11/UbGATIeyeqo0cJzWPCHSl7KTgQ9iR1uELPRLSGhIpjo9EaEOIlOrCtCRno8w==
+  dependencies:
+    vue "^3.2.25"
+    yg-ui-plus "^0.0.3"
