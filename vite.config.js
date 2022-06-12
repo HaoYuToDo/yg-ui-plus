@@ -2,16 +2,22 @@
  * @Author: yhy
  * @Date: 2022-06-05 11:10:02
  * @LastEditors: yhy
- * @LastEditTime: 2022-06-05 18:35:43
+ * @LastEditTime: 2022-06-12 15:59:57
  * @Description:
  */
 import { defineConfig } from "vite";
 import vue from "@vitejs/plugin-vue";
 import { join } from "path";
+import Markdown from "vite-plugin-md";
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  plugins: [vue()],
+  plugins: [
+    vue({
+      include: [/\.vue$/, /\.md$/],
+    }),
+    Markdown(), // 支持md作为vue组件、支持vue组件在md中使用
+  ],
   build: {
     rollupOptions: {
       // 请确保外部化那些你的库中不需要的依赖,解决报（reading ‘isCE‘）错误
@@ -31,6 +37,7 @@ export default defineConfig({
   resolve: {
     alias: {
       "@": join(__dirname, "./src"),
+      "@package": join(__dirname, "./packages"),
     },
   },
   css: {
