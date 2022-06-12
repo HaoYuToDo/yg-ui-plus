@@ -2,7 +2,7 @@
  * @Author: yhy
  * @Date: 2022-06-05 11:10:02
  * @LastEditors: yhy
- * @LastEditTime: 2022-06-12 15:59:57
+ * @LastEditTime: 2022-06-12 21:34:36
  * @Description:
  */
 import { defineConfig } from "vite";
@@ -41,10 +41,10 @@ export default defineConfig({
     },
   },
   css: {
-    // 配置less全局变量
     preprocessorOptions: {
       less: {
-        additionalData: `@import '@/styles/index.less';`,
+        // 配置less全局变量
+        additionalData: `@import '@/styles/global.less';`,
       },
     },
   },

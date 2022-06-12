@@ -1,6 +1,8 @@
 // 在HTML元素样式上提供了跨浏览器的高度一致性
-@import "./normalize.less";
+@import "./base/normalize.less";
 // 重置浏览器样式
-@import "./reset.less";
-// 加载全局变量
-@import "./global.less";
+@import "./base/reset.less";
+// 重置浏览器样式
+@import "./base/customReset.less";
+// 加载全局变量 在vite.config.js中配置
+// @import "./global.less";
