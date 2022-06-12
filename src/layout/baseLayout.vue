@@ -2,17 +2,16 @@
  * @Author: yhy
  * @Date: 2022-06-12 16:38:31
  * @LastEditors: yhy
- * @LastEditTime: 2022-06-12 16:45:28
+ * @LastEditTime: 2022-06-12 22:26:10
  * @Description: 
 -->
-<script setup></script>
+<script setup>
+import BaseHeader from "./components/BaseHeader.vue";
+</script>
 
 <template>
   <div class="baseLayout">
-    <div class="base-header">
-      <span>组件</span>
-      <span>指南</span>
-    </div>
+    <BaseHeader></BaseHeader>
     <div class="base-content">
       <router-view></router-view>
     </div>
@@ -22,11 +21,7 @@
 <style lang="less" scoped>
 .baseLayout {
   height: 100%;
-  .base-header {
-    height: 55px;
-    display: flex;
-    background-color: lightblue;
-  }
+
   .base-content {
     height: calc(~"100% - 55px");
   }
