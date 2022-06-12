@@ -2,26 +2,26 @@
  * @Author: yhy
  * @Date: 2022-06-12 15:43:31
  * @LastEditors: yhy
- * @LastEditTime: 2022-06-12 17:34:13
+ * @LastEditTime: 2022-06-12 20:44:08
  * @Description: 代码高亮
 -->
 <script setup>
 import { ref, toRefs, onMounted } from "vue";
 
 let props = defineProps({
-  aaa: {
+  compName: {
     type: String,
     default: "",
     required: true,
   },
-  bbb: {
+  demoName: {
     type: String,
     default: "",
     required: true,
   },
 });
 
-let { aaa, bbb } = toRefs(props);
+let { compName, demoName } = toRefs(props);
 
 let sourceCode = ref("");
 
@@ -29,7 +29,7 @@ let sourceCode = ref("");
 async function getSourceCode() {
   sourceCode.value = (
     await import(
-      /* @vite-ignore */ `/packages/${aaa.value}/doc/${bbb.value}.vue?raw`
+      /* @vite-ignore */ `/packages/${compName.value}/doc/${demoName.value}.vue?raw`
     )
   ).default;
 }
@@ -41,7 +41,7 @@ onMounted(() => {
 
 <template>
   <div class="Preview">
-    <pre v-highlight><code>{{ sourceCode }}</code></pre>
+    <highlightjs autodetect :code="sourceCode" />
   </div>
 </template>
 

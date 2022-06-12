@@ -6,6 +6,6 @@ import Preview from '@/components/Preview.vue'
 # Button 按钮
 
 
-<Preview aaa="button" bbb="demo1"  ></Preview>
+<Preview comp-name="button" demo-name="demo1"  ></Preview>
 
 
