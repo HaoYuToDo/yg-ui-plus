@@ -10,14 +10,49 @@ let routes = [
     path: "/",
     name: "baseLayout",
     component: () => import("@/layout/baseLayout.vue"),
+    redirect: "/welcome",
     children: [
       {
-        path: "homeWelcome",
-        name: "homeWelcome",
+        path: "welcome",
+        name: "welcome",
         meta: {
           title: "欢迎页",
         },
-        component: () => import("@/views/homeWelcome.vue"),
+        component: () => import("@/views/welcome/index.vue"),
+      },
+      {
+        path: "guide",
+        name: "guide",
+        meta: {
+          title: "指南",
+        },
+        component: () => import("@/views/guide/index.vue"),
+      },
+      {
+        path: "comp",
+        name: "comp",
+        meta: {
+          title: "组件",
+        },
+        component: () => import("@/views/comp/index.vue"),
+        children: [
+          {
+            path: "button",
+            name: "button",
+            meta: {
+              title: "Button按钮",
+            },
+            component: () => import("@package/button/doc/doc.md"),
+          },
+          {
+            path: "input",
+            name: "input",
+            meta: {
+              title: "Input输入框",
+            },
+            component: () => import("@package/input/doc/doc.md"),
+          },
+        ],
       },
     ],
   },

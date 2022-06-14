@@ -7,8 +7,7 @@
  */
 import { createRouter, createWebHashHistory } from "vue-router";
 import comRoute from "@/router/modlues/comRoute";
-import packageRoute from "@/router/modlues/packageRoute";
-let routes = [...comRoute, ...packageRoute];
+let routes = [...comRoute];
 let router = createRouter({
   history: createWebHashHistory(),
   routes, // `routes: routes` 的缩写
