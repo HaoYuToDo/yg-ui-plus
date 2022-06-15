@@ -6,12 +6,16 @@
  * @Description: 
 -->
 <script setup>
-import { reactive, ref } from "vue";
+import { reactive } from "vue";
+import { storeToRefs } from "pinia";
 import { useRouter } from "vue-router";
+import useBaseStore from "@/store/modlues/baseStore";
+
+let baseStore = useBaseStore();
+
+const { tabIndex } = storeToRefs(baseStore);
 
 let router = useRouter();
-
-let currentIndex = ref(0);
 
 const tabList = reactive([
   {
@@ -26,7 +30,7 @@ const tabList = reactive([
 
 const handleTabItem = (tab, index) => {
   let { path } = tab;
-  currentIndex.value = index;
+  baseStore.setTabIndex(index);
   router.push(path);
 };
 
@@ -45,7 +49,7 @@ const handleLogo = () => {
     <div class="tab-content">
       <div
         class="tab"
-        :class="{ 'tab-active': currentIndex === index }"
+        :class="{ 'tab-active': tabIndex === index }"
         v-for="(tab, index) in tabList"
         :key="index"
         @click="handleTabItem(tab, index)"

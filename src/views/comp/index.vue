@@ -7,25 +7,27 @@
 -->
 <script setup>
 import { ref, onMounted } from "vue";
+import { storeToRefs } from "pinia";
 import { useRouter } from "vue-router";
-import routerList from "@/router/modlues/comRoute";
+import useBaseStore from "@/store/modlues/baseStore";
+import routerList from "@/router/modlues/compRoute";
+
+let baseStore = useBaseStore();
+
+const { menuIndex } = storeToRefs(baseStore);
 
 let router = useRouter();
 
 let menuList = ref([]);
 
-let currentIndex = ref(0);
-
 const handleItemMenu = (menu, index) => {
   let { name } = menu;
-  currentIndex.value = index;
+  baseStore.setMenuIndex(index);
   router.push({ name });
 };
 
 onMounted(() => {
-  // 规定组件路由永远定义在最后一个
-  let len = routerList[0].children.length;
-  menuList.value = routerList[0].children[len - 1].children;
+  menuList.value = routerList;
 });
 </script>
 
@@ -34,7 +36,7 @@ onMounted(() => {
     <div class="left-menu">
       <div
         class="menu"
-        :class="{ 'menu-active': currentIndex === index }"
+        :class="{ 'menu-active': menuIndex === index }"
         v-for="(menu, index) in menuList"
         :key="index"
         @click="handleItemMenu(menu, index)"

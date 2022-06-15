@@ -8,6 +8,7 @@
 import { createApp } from "vue";
 import App from "@/App.vue";
 import router from "@/router";
+import pinia from "@/store";
 // 代码高亮  更多样式：https://highlightjs.org/static/demo/
 import "highlight.js/styles/stackoverflow-light.css";
 import "highlight.js/lib/common";
@@ -22,5 +23,6 @@ import ygUiPlus from "@package";
 let app = createApp(App);
 app.use(hljsVuePlugin);
 app.use(router);
+app.use(pinia);
 app.use(ygUiPlus);
 app.mount("#app");
