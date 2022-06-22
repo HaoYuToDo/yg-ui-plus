@@ -5,6 +5,9 @@ declare module "*.md" {
   export default Component;
 }
 
+// 声明第三方库
+declare module "yg-ui-plus";
+
 // 定义菜单
 declare namespace Menu {
   interface MenuOptions {

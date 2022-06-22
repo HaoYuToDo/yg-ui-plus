@@ -16,9 +16,9 @@ import hljsVuePlugin from "@highlightjs/vue-plugin";
 
 // ----------------导入组件库--------
 // -本地引入
-import ygUiPlus from "@packages/index";
+// import ygUiPlus from "@packages/index";
 // -npm引入
-// import ygUiPlus from "yg-ui-plus";
+import ygUiPlus from "yg-ui-plus";
 
 let app = createApp(App);
 app.use(hljsVuePlugin);

@@ -2438,3 +2438,15 @@ yauzl@^2.10.0:
   dependencies:
     buffer-crc32 "~0.2.3"
     fd-slicer "~1.1.0"
+
+yg-ui-plus@^0.0.5:
+  version "0.0.5"
+  resolved "https://registry.yarnpkg.com/yg-ui-plus/-/yg-ui-plus-0.0.5.tgz#b72ae7c461e99b1dcaa118d6aa34169e10622fb1"
+  integrity sha512-2HOnbb3YfC3LVAKtBC/BAaAu6u1BWCNv+G1ngecDj7/dzoyJgO2oBSXJkWTTsuLuMeVraudkgsHtvrjMceSbOg==
+  dependencies:
+    "@highlightjs/vue-plugin" "^2.1.0"
+    highlight.js "^11.5.1"
+    pinia "^2.0.14"
+    pinia-plugin-persistedstate "^1.6.1"
+    vue "^3.2.25"
+    vue-router "4"
