@@ -7,7 +7,7 @@
  */
 import YgButton from "./index.vue";
 
-YgButton.install = (app) => {
+YgButton.install = (app: any) => {
   app.component(YgButton.name, YgButton);
 };
 

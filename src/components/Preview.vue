@@ -5,21 +5,19 @@
  * @LastEditTime: 2022-06-12 20:44:08
  * @Description: 代码高亮
 -->
-<script setup>
+<script setup lang="ts">
 import { ref, toRefs, onMounted } from "vue";
 
-let props = defineProps({
-  compName: {
-    type: String,
-    default: "",
-    required: true,
-  },
-  demoName: {
-    type: String,
-    default: "",
-    required: true,
-  },
-});
+let props = withDefaults(
+  defineProps<{
+    compName: string;
+    demoName: string;
+  }>(),
+  {
+    compName: "",
+    demoName: "",
+  }
+);
 
 let { compName, demoName } = toRefs(props);
 

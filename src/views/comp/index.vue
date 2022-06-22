@@ -5,29 +5,30 @@
  * @LastEditTime: 2022-06-12 16:43:20
  * @Description: 
 -->
-<script setup>
-import { ref, onMounted } from "vue";
+<script setup lang="ts">
+import { reactive, onMounted } from "vue";
 import { storeToRefs } from "pinia";
 import { useRouter } from "vue-router";
 import useBaseStore from "@/store/modlues/baseStore";
 import routerList from "@/router/modlues/compRoute";
-
 let baseStore = useBaseStore();
 
 const { menuIndex } = storeToRefs(baseStore);
 
 let router = useRouter();
 
-let menuList = ref([]);
+let menuList = reactive<{
+  list: Menu.MenuOptions[];
+}>({ list: [] });
 
-const handleItemMenu = (menu, index) => {
+const handleItemMenu = (menu: Menu.MenuOptions, index: number) => {
   let { name } = menu;
   baseStore.setMenuIndex(index);
   router.push({ name });
 };
 
 onMounted(() => {
-  menuList.value = routerList;
+  menuList.list = routerList;
 });
 </script>
 
@@ -37,7 +38,7 @@ onMounted(() => {
       <div
         class="menu"
         :class="{ 'menu-active': menuIndex === index }"
-        v-for="(menu, index) in menuList"
+        v-for="(menu, index) in menuList.list"
         :key="index"
         @click="handleItemMenu(menu, index)"
       >

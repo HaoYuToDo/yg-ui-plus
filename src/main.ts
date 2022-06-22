@@ -16,7 +16,7 @@ import hljsVuePlugin from "@highlightjs/vue-plugin";
 
 // ----------------导入组件库--------
 // -本地引入
-import ygUiPlus from "@package";
+import ygUiPlus from "@packages/index";
 // -npm引入
 // import ygUiPlus from "yg-ui-plus";
 

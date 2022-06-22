@@ -7,7 +7,7 @@
  */
 import YgInput from "./index.vue";
 
-YgInput.install = (app) => {
+YgInput.install = (app: any) => {
   app.component(YgInput.name, YgInput);
 };
 

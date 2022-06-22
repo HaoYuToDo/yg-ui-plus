@@ -5,7 +5,7 @@
  * @LastEditTime: 2022-06-12 16:15:08
  * @Description: 
 -->
-<script setup></script>
+<script setup lang="ts"></script>
 
 <template>
   <div>欢迎页</div>

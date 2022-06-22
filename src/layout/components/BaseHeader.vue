@@ -5,7 +5,7 @@
  * @LastEditTime: 2022-06-12 22:25:42
  * @Description: 
 -->
-<script setup>
+<script setup lang="ts">
 import { reactive } from "vue";
 import { storeToRefs } from "pinia";
 import { useRouter } from "vue-router";

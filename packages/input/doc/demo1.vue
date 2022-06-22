@@ -5,7 +5,7 @@
  * @LastEditTime: 2022-06-12 16:18:04
  * @Description: 
 -->
-<script setup>
+<script setup lang="ts">
 import { ref } from "vue";
 let msg = ref("默认值");
 </script>

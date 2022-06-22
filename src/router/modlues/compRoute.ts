@@ -12,7 +12,7 @@ let routes = [
     meta: {
       title: "Button按钮",
     },
-    component: () => import("@package/button/doc/doc.md"),
+    component: () => import("@packages/button/doc/doc.md"),
   },
   {
     path: "input",
@@ -20,7 +20,7 @@ let routes = [
     meta: {
       title: "Input输入框",
     },
-    component: () => import("@package/input/doc/doc.md"),
+    component: () => import("@packages/input/doc/doc.md"),
   },
 ];
 export default routes;

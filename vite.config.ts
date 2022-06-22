@@ -37,7 +37,7 @@ export default defineConfig({
   resolve: {
     alias: {
       "@": join(__dirname, "./src"),
-      "@package": join(__dirname, "./packages"),
+      "@packages": join(__dirname, "./packages"),
     },
   },
   css: {

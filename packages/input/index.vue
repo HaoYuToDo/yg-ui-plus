@@ -6,17 +6,17 @@
  * @Description: 
 -->
 
-<script>
+<script lang="ts">
 export default {
   name: "YgInput",
 };
 </script>
 
-<script setup>
+<script setup lang="ts">
 import { computed } from "vue";
-let props = defineProps({
-  modelValue: String | Number,
-});
+let props = defineProps<{
+  modelValue?: string | number;
+}>();
 
 let emit = defineEmits(["update:modelValue"]);
 

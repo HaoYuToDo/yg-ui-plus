@@ -8,10 +8,10 @@ const useBaseStore = defineStore("base", {
     };
   },
   actions: {
-    setTabIndex(index) {
+    setTabIndex(index: number) {
       this.tabIndex = index;
     },
-    setMenuIndex(index) {
+    setMenuIndex(index: number) {
       this.menuIndex = index;
     },
   },

@@ -5,7 +5,7 @@
  * @LastEditTime: 2022-06-12 21:32:34
  * @Description: 
 -->
-<script setup></script>
+<script setup lang="ts"></script>
 
 <template>
   <router-view></router-view>

@@ -6,13 +6,13 @@
  * @Description: 
 -->
 
-<script>
+<script lang="ts">
 export default {
   name: "YgButton",
 };
 </script>
 
-<script setup>
+<script setup lang="ts">
 import { computed } from "vue";
 let wrapClass = computed(() => {
   return ["yg-button-default"];

@@ -5,7 +5,7 @@
  * @LastEditTime: 2022-06-12 22:26:10
  * @Description: 
 -->
-<script setup>
+<script setup lang="ts">
 import BaseHeader from "./components/BaseHeader.vue";
 </script>
 
