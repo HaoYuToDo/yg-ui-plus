@@ -17,7 +17,12 @@ const { tabIndex } = storeToRefs(baseStore);
 
 let router = useRouter();
 
-const tabList = reactive([
+interface TabItem {
+  name: string;
+  path: string;
+}
+
+const tabList = reactive<TabItem[]>([
   {
     name: "指南",
     path: "/guide",
@@ -28,7 +33,7 @@ const tabList = reactive([
   },
 ]);
 
-const handleTabItem = (tab, index) => {
+const handleTabItem = (tab: TabItem, index: number) => {
   let { path } = tab;
   baseStore.setTabIndex(index);
   router.push(path);

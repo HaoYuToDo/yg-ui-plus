@@ -30,7 +30,7 @@ export default defineConfig({
       },
     },
     lib: {
-      entry: join(__dirname, "./packages/index.js"),
+      entry: join(__dirname, "./packages/index.ts"),
       name: "ygUiPlus",
     },
   },

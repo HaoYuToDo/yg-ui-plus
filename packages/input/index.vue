@@ -20,8 +20,8 @@ let props = defineProps<{
 
 let emit = defineEmits(["update:modelValue"]);
 
-let handleInput = (event) => {
-  let value = event.target.value;
+let handleInput = (event: Event) => {
+  let value = (event.target as HTMLInputElement).value;
   emit("update:modelValue", value);
 };
 
