@@ -1,11 +1,3 @@
-<!--
- * @Author: yhy
- * @Date: 2022-06-05 11:15:31
- * @LastEditors: yhy
- * @LastEditTime: 2022-06-05 12:01:13
- * @Description: 
--->
-
 <script lang="ts">
 export default {
   name: "YgInput",

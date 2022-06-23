@@ -6,7 +6,11 @@ import demo1 from './demo1.vue'
 
 # Button 按钮
 
-<demo1></demo1>
+<br/>
+
+<div class="components-box">
+  <demo1/>
+</div>
 
 
 <Preview comp-name="button" demo-name="demo1"  ></Preview>

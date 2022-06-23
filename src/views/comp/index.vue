@@ -59,6 +59,7 @@ onMounted(() => {
     width: 300px;
     height: 100%;
     padding-top: 60px;
+    border-right: 1px solid @divider-color;
     .menu {
       cursor: pointer;
       height: 40px;
@@ -80,6 +81,7 @@ onMounted(() => {
   .comp-content {
     flex: 1;
     height: 100%;
+    padding: 20px 30px;
   }
 }
 </style>
