@@ -14,6 +14,14 @@ export default {
 
 <script setup lang="ts">
 import { computed } from "vue";
+const props = withDefaults(
+  defineProps<{
+    type: string;
+  }>(),
+  {
+    type: "",
+  }
+);
 let wrapClass = computed(() => {
   return ["yg-button-default"];
 });
