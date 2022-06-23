@@ -43,8 +43,8 @@ export default defineConfig({
   css: {
     preprocessorOptions: {
       less: {
-        // 配置less全局变量
-        additionalData: `@import '@/styles/global.less';`,
+        // 1.重置css样式 2.加载css变量
+        additionalData: `@import '@/styles/index.less';`,
       },
     },
   },

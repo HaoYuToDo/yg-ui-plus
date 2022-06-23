@@ -2450,3 +2450,16 @@ yg-ui-plus@^0.0.5:
     pinia-plugin-persistedstate "^1.6.1"
     vue "^3.2.25"
     vue-router "4"
+
+yg-ui-plus@^0.0.6:
+  version "0.0.6"
+  resolved "https://registry.yarnpkg.com/yg-ui-plus/-/yg-ui-plus-0.0.6.tgz#6658cdec13cbb16608ca95555ce58c89a883105c"
+  integrity sha512-lhOnZuObpzCU39qungxdzdGS4pfoS2T9a3iYi2ravwifylFEU16LlTRIRdER4H6rzzqrFfE3LEPvmjHzMNiqjw==
+  dependencies:
+    "@highlightjs/vue-plugin" "^2.1.0"
+    highlight.js "^11.5.1"
+    pinia "^2.0.14"
+    pinia-plugin-persistedstate "^1.6.1"
+    vue "^3.2.25"
+    vue-router "4"
+    yg-ui-plus "^0.0.5"

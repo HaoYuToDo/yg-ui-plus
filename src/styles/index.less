@@ -1,8 +1,10 @@
+//通用重置样式:组件库和本地项目（都可以在vite.config.ts中引入）
+// 组件库也需要引入，给组件库用（打包类名会带hash值，不会和本地冲突，）
+// 本地项目也需要引入，给自己用
+
 // 在HTML元素样式上提供了跨浏览器的高度一致性
 @import "./base/normalize.less";
 // 重置浏览器样式
 @import "./base/reset.less";
-// 重置浏览器样式
-@import "./base/customReset.less";
 // 加载全局变量 在vite.config.js中配置
-// @import "./global.less";
+@import "./base/global.less";

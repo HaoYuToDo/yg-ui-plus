@@ -12,5 +12,5 @@
 </template>
 
 <style lang="less">
-@import "@/styles/index.less";
+@import "@/styles/local/customReset.less";
 </style>
