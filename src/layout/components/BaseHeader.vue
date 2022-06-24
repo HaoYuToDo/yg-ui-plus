@@ -70,7 +70,7 @@ const handleLogo = () => {
   height: 55px;
   display: flex;
   align-items: center;
-  border-bottom: 1px solid @divider-color;
+  border-bottom: 1px solid @border-color;
   .logo-content {
     width: 100px;
     height: 100%;

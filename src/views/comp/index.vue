@@ -59,7 +59,7 @@ onMounted(() => {
     width: 300px;
     height: 100%;
     padding-top: 60px;
-    border-right: 1px solid @divider-color;
+    border-right: 1px solid @border-color;
     .menu {
       cursor: pointer;
       height: 40px;
