@@ -39,7 +39,7 @@ const isClass = computed(() => {
 </script>
 
 <template>
-  <button :class="isClass">
+  <button :class="isClass" :disabled="disabled">
     <slot></slot>
   </button>
 </template>
