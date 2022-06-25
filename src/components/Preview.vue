@@ -21,6 +21,8 @@ let props = withDefaults(
 
 let { compName, demoName } = toRefs(props);
 
+let showCode = ref(false);
+
 let sourceCode = ref("");
 
 // 获取页面代码
@@ -38,9 +40,28 @@ onMounted(() => {
 </script>
 
 <template>
-  <div class="Preview">
-    <highlightjs autodetect :code="sourceCode" />
+  <div class="preview">
+    <div v-if="showCode">
+      <highlightjs autodetect :code="sourceCode" />
+    </div>
+    <div class="btn" @click="showCode = !showCode">
+      {{ showCode ? "隐藏代码" : "显示代码" }}
+    </div>
   </div>
 </template>
 
-<style lang="less" scoped></style>
+<style lang="less" scoped>
+.preview {
+  .btn {
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #f9f9f9;
+    cursor: pointer;
+    &:hover {
+      color: @primary-color;
+    }
+  }
+}
+</style>
