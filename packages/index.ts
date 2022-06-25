@@ -7,7 +7,8 @@
  */
 import YgButton from "./button";
 import YgInput from "./input";
-let components = [YgButton, YgInput];
+import YgIcon from "./icon";
+let components = [YgButton, YgInput, YgIcon];
 
 let install = (app: any) => {
   components.forEach((com) => {

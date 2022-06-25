@@ -22,5 +22,13 @@ let routes = [
     },
     component: () => import("@packages/input/doc/doc.md"),
   },
+  {
+    path: "icon",
+    name: "icon",
+    meta: {
+      title: "Icon图标",
+    },
+    component: () => import("@packages/icon/doc/doc.md"),
+  },
 ];
 export default routes;
