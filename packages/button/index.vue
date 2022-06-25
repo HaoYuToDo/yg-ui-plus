@@ -16,20 +16,23 @@ export default {
 import { computed, toRefs } from "vue";
 const props = withDefaults(
   defineProps<{
-    type: string;
-    round: boolean;
+    type: string; //类型
+    round: boolean; //是否圆角
+    disabled: boolean; //是否禁用
   }>(),
   {
     type: "",
     round: false,
+    disabled: false,
   }
 );
-let { type, round } = toRefs(props);
+let { type, round, disabled } = toRefs(props);
 
 const isClass = computed(() => {
   return [
     "yg-button",
     { [`yg-button-${type.value}`]: type.value },
+    { [`yg-button-${type.value}-disable`]: disabled.value },
     { "yg-button-round": round.value },
   ];
 });
@@ -57,9 +60,11 @@ const isClass = computed(() => {
     opacity: 0.8;
   }
 }
+
 .yg-button-round {
   border-radius: 20px;
 }
+
 .yg-button-primary {
   color: white;
   background-color: @primary-color;
@@ -84,5 +89,26 @@ const isClass = computed(() => {
   color: white;
   background-color: @info-color;
   border: 1px solid @info-color;
+}
+
+.yg-button-primary-disable {
+  cursor: no-drop;
+  opacity: 0.5;
+}
+.yg-button-success-disable {
+  cursor: no-drop;
+  opacity: 0.5;
+}
+.yg-button-warning-disable {
+  cursor: no-drop;
+  opacity: 0.5;
+}
+.yg-button-danger-disable {
+  cursor: no-drop;
+  opacity: 0.5;
+}
+.yg-button-info-disable {
+  cursor: no-drop;
+  opacity: 0.5;
 }
 </style>
