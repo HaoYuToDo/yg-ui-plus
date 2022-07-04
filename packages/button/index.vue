@@ -1,11 +1,5 @@
-<!--
- * @Author: yhy
- * @Date: 2022-06-05 11:15:31
- * @LastEditors: yhy
- * @LastEditTime: 2022-06-05 18:25:16
- * @Description: 
--->
 
+<!-- 按钮 -->
 <script lang="ts">
 export default {
   name: "YgButton",

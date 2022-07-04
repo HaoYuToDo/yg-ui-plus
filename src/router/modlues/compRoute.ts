@@ -30,5 +30,13 @@ let routes = [
     },
     component: () => import("@packages/icon/doc/doc.md"),
   },
+  {
+    path: "message",
+    name: "message",
+    meta: {
+      title: "message消息提示",
+    },
+    component: () => import("@packages/message/doc/doc.md"),
+  },
 ];
 export default routes;

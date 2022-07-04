@@ -8,12 +8,14 @@
 import YgButton from "./button";
 import YgInput from "./input";
 import YgIcon from "./icon";
+import Message from "./message";
 let components = [YgButton, YgInput, YgIcon];
 
 let install = (app: any) => {
   components.forEach((com) => {
     app.use(com);
   });
+  app.config.globalProperties.$message = Message;
 };
 
 // 全局引入
@@ -22,6 +24,6 @@ let ygUiPlus = {
 };
 
 // 支持按需引入
-export { YgButton, YgInput };
+export { YgButton, YgInput, YgIcon, Message };
 
 export default ygUiPlus;
