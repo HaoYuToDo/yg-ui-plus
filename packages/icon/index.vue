@@ -41,4 +41,5 @@ const styles = computed(() => {
   <i :class="isClass" :style="styles"></i>
 </template>
 
-<style lang="less" scoped></style>
+<style lang="less" scoped>
+</style>
