@@ -8,12 +8,30 @@
 import YgMessage from "./index.vue";
 import { h, render } from "vue";
 
-export default ({ text, timeout }: { text: string; timeout?: number }) => {
+export default ({
+  text,
+  timeout,
+  type,
+  customColor,
+  customBackgroundColor,
+}: {
+  text: string;
+  timeout?: number;
+  type?: string;
+  customColor?: string;
+  customBackgroundColor?: string;
+}) => {
   if (document) {
     // 动态创建一个DOM容器
     const div = document.createElement("div");
+    // 1.设置样式 2.防止类名污染
+    div.setAttribute("class", "yg-meassage-container");
     // 创建虚拟dom
-    const vnode = h(YgMessage, {}, () => h("div", text));
+    const vnode = h(
+      YgMessage,
+      { type, customColor, customBackgroundColor },
+      () => h("div", text)
+    );
     // 通过render函数把虚拟dom转化为真实dom,并挂载到容器dom上
     render(vnode, div);
     // 把容器挂载到body节点上
@@ -25,6 +43,6 @@ export default ({ text, timeout }: { text: string; timeout?: number }) => {
       document.body.removeChild(div);
       clearTimeout(timer);
       timer = null;
-    }, timeout || 2500);
+    }, timeout || 1500);
   }
 };

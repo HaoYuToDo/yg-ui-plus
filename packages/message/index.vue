@@ -5,9 +5,34 @@ export default {
 };
 </script>
 <script setup lang="ts">
-import { ref, onMounted } from 'vue'
+import { ref, onMounted, reactive, toRefs } from 'vue'
+const props = withDefaults(
+  defineProps<{
+    type?: string; //类型
+    customColor?: string;
+    customBackgroundColor?: string;
+  }>(),
+  {
+    type: "default",
+    customColor: '',
+    customBackgroundColor: '',
+  }
+);
+let { type, customColor, customBackgroundColor } = toRefs(props);
 
 let isShow = ref(false)
+
+let isStyle = reactive({
+  default: {},
+  primary: {
+    color: '#FFFFFF',
+    backgroundColor: '#409eff',
+  },
+  custom: {
+    color: customColor.value,
+    backgroundColor: customBackgroundColor.value,
+  }
+} as any)
 
 onMounted(() => {
   isShow.value = true
@@ -15,7 +40,7 @@ onMounted(() => {
 </script>
 
 <template>
-  <div class="yg-message" v-show="isShow">
+  <div class="yg-message" v-show="isShow" :style="isStyle[type]">
     <slot></slot>
   </div>
 </template>
@@ -28,9 +53,9 @@ onMounted(() => {
   left: 50%;
   transform: translateX(-50%);
   height: 45px;
-  border: 1px solid #e4e4e4;
-  background: #f5f5f5;
-  color: #999;
+  border: 1px solid @border-color;
+  background-color: #fff;
+  color: @text-color;
   border-radius: 4px;
   display: flex;
   align-items: center;
