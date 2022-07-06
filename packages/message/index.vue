@@ -11,14 +11,16 @@ const props = withDefaults(
     type?: string; //类型
     customColor?: string;
     customBackgroundColor?: string;
+    timeout: number;
   }>(),
   {
     type: "default",
     customColor: '',
     customBackgroundColor: '',
+    timeout: 1500
   }
 );
-let { type, customColor, customBackgroundColor } = toRefs(props);
+let { type, customColor, customBackgroundColor, timeout } = toRefs(props);
 
 let isShow = ref(false)
 
@@ -36,13 +38,22 @@ let isStyle = reactive({
 
 onMounted(() => {
   isShow.value = true
+  let difTime = timeout.value - 200
+  let timer: any = setTimeout(() => {
+    isShow.value = false
+    clearTimeout(timer)
+    timer = null
+  }, difTime)
+
 })
 </script>
 
 <template>
-  <div class="yg-message" v-show="isShow" :style="isStyle[type]">
-    <slot></slot>
-  </div>
+  <transition name="slide-fade">
+    <div class="yg-message" v-show="isShow" :style="isStyle[type]">
+      <slot></slot>
+    </div>
+  </transition>
 </template>
 
 <style lang="less" scoped>
@@ -61,5 +72,20 @@ onMounted(() => {
   align-items: center;
   justify-content: center;
 
+}
+
+.yg-meassage-container {
+  .slide-fade-enter-active {
+    transition: all 0.3s ease-in;
+  }
+
+  .slide-fade-leave-active {
+    transition: all 0.3s ease-out;
+  }
+
+  .slide-fade-enter-from,
+  .slide-fade-leave-to {
+    transform: translate3d(-50%, -75px, 0);
+  }
 }
 </style>

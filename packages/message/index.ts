@@ -29,7 +29,7 @@ export default ({
     // 创建虚拟dom
     const vnode = h(
       YgMessage,
-      { type, customColor, customBackgroundColor },
+      { type, customColor, customBackgroundColor, timeout },
       () => h("div", text)
     );
     // 通过render函数把虚拟dom转化为真实dom,并挂载到容器dom上
