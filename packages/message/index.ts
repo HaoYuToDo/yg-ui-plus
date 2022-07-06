@@ -9,19 +9,22 @@ import YgMessage from "./index.vue";
 import { h, render } from "vue";
 
 export default ({ text, timeout }: { text: string; timeout?: number }) => {
-  // 动态创建一个DOM容器
-  const div = document.createElement("div");
-  document.body.appendChild(div);
-
-  // 传递给组件的选项
-  const vnode = h(YgMessage, {}, [text]);
-  render(vnode, div);
-
-  let timer: any = null;
-  clearTimeout(timer);
-  timer = setTimeout(() => {
-    render(null, div);
-    document.body.removeChild(div);
-    clearTimeout(timer);
-  }, timeout || 2500);
+  if (document) {
+    // 动态创建一个DOM容器
+    const div = document.createElement("div");
+    // 创建虚拟dom
+    const vnode = h(YgMessage, {}, () => h("div", text));
+    // 通过render函数把虚拟dom转化为真实dom,并挂载到容器dom上
+    render(vnode, div);
+    // 把容器挂载到body节点上
+    document.body.appendChild(div);
+    // 设置消失时间
+    let timer: any = null;
+    timer = setTimeout(() => {
+      render(null, div);
+      document.body.removeChild(div);
+      clearTimeout(timer);
+      timer = null;
+    }, timeout || 2500);
+  }
 };

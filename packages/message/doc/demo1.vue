@@ -1,11 +1,11 @@
 <script setup lang="ts">
 import Message from '../index'
 const openMsg = () => {
-  Message({ text: 'hello word' })
+  Message({ text: '消息提示' })
 }
 
 const openMsg5s = () => {
-  Message({ text: 'hello word', timeout: 5000 })
+  Message({ text: '5s消息提示', timeout: 5000 })
 }
 </script>
 
